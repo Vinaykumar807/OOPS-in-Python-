@@ -24,15 +24,14 @@
 
 # Self Keyword :- 
 # self: Refers to the instance of the class itself, allowing you to access attributes and methods within a class
+# self is basically used to acces the current object's variables and methods 
 
 class person:
     def __init__ (self,name,age):   # This is a self keyword 
-        self.name= name
+        self.name= name             # Initiating here  self keyword
         self.age = age 
-    def eat(self):           # It is a mandatory to write self keyword in a method 
+    def eat(self):                   # It is a mandatory to write self keyword in a method 
         print(f"{self.name} {self.age} years old and eating a pizza")
-    
 
 v = person("Vinay",20)
-
 v.eat()
