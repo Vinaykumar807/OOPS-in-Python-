@@ -56,7 +56,7 @@ laptop2.show_info()
 laptop3.show_info()
 
 
-# Example 1 .
+# Example.
 
 class movie:
     def __init__ (self,title,rating):
