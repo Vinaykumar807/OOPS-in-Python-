@@ -35,3 +35,39 @@ class person:
 
 v = person("Vinay",20)
 v.eat()
+
+
+# Creating a multiple objects with attributes 
+
+class laptop :
+    def __init__ (self,brand,price):
+        self.brand = brand
+        self.price = price 
+       
+    def show_info(self):
+        print(f"This a {self.brand} laptop and it has {self.price} rupees") 
+
+laptop1 = laptop("Dell G15", 75000,)       # Here we creating a multiple objects 
+laptop2 = laptop("HP Victus", 55000)
+laptop3 = laptop("Acer",30000)
+
+laptop1.show_info()
+laptop2.show_info()
+laptop3.show_info()
+
+
+# Example 1 .
+
+class movie:
+    def __init__ (self,title,rating):
+        self.title = title
+        self.rating = rating
+    def display(self):
+        print(f"{self.title} is the movie it has highest rating is  {self.rating}")
+
+movie1 = movie("Bahubali",9.8)
+movie2 = movie("KGF 2",9.5)
+
+movie1.display()
+movie2.display()
+
