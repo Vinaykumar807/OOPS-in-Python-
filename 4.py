@@ -83,3 +83,30 @@ class Dog(Animal):  # Child
 
 dog = Dog("Doggyyy")
 dog.sound()  
+
+
+# Abstract Class :-
+# An abstract class in Python is a class that cannot be instantiated directly. 
+# It can have abstract methods, which must be implemented by subclasses.
+# Purpose: 
+# Abstract classes provide a blueprint for other classes, 
+# enforcing a structure where subclasses must implement certain methods.
+# Implementation :- 
+# Use the ABC (Abstract Base Class) module to create abstract classes in Python.
+
+from abc import ABC, abstractmethod
+
+class vehicle(ABC):       # Here we have to write square bracketsn within = (ABC) for abstract class
+    @abstractmethod       # It is a decorator bind with function
+    def start_engine(self):
+        pass 
+
+class car(vehicle):
+    def __init__(self,name):
+        self.name = name
+    def start_engine(self):
+        print("Engine Started") 
+
+car1 = car("Tata")
+car1.start_engine()
+print(car1.name)
