@@ -1,30 +1,30 @@
-# # Getter and Setter :- 
-# # Getters and setters are methods that allow controlled access to an object's attributes.
-# # Purpose:-
-# # They help in validating data, protecting data from accidental modification, and providing controlled access.
+# Getter and Setter :- 
+# Getters and setters are methods that allow controlled access to an object's attributes.
+# Purpose:-
+# They help in validating data, protecting data from accidental modification, and providing controlled access.
 
-# # Example :- 
-# class Student:
-#     def __init__(self, name, age):
-#         self.__name = name
-#         self.__age = age  # Private attribute
+# Example :- 
+class Student:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age  # Private attribute
 
-#     # Getter for age
-#     def get_age(self): 
-#         return self.__age
+    # Getter for age
+    def get_age(self): 
+        return self.__age
 
-#     # Setter for age
-#     def set_age(self, age):
-#         if age > 0:  # Validation
-#             self.__age = age
-#         else:
-#             print("Invalid age")
+    # Setter for age
+    def set_age(self, age):
+        if age > 0:  # Validation
+            self.__age = age
+        else:
+            print("Invalid age")
 
-# # Usage
-# student = Student("Anita", 20)
-# print("Age:", student.get_age())        # Accessing age with getter
-# student.set_age(21)                     # Modifying age with setter
-# print("Updated Age:", student.get_age())
+# Usage
+student = Student("Anita", 20)
+print("Age:", student.get_age())        # Accessing age with getter
+student.set_age(21)                     # Modifying age with setter
+print("Updated Age:", student.get_age())
 
 
 # Method overloading :-
@@ -70,16 +70,16 @@ dog.sound()  # Calls the overridden method in Dog class
 
 # Example 
 
-class Animal:
+class Animal:   # Parent
     def sound(self):
         print("This animal makes a sound")
 
-class Dog(Animal):
+class Dog(Animal):  # Child 
     def __init__(self,name ):
         self.name = name 
     def sound(self):
-        super().sound()
-        print(f"{self.name} is barking")  # Overrides the parent class method
+        super().sound()       # So here we callig (super = Parent class)from parent class 
+        print(f"{self.name} is barking")  
 
 dog = Dog("Doggyyy")
 dog.sound()  
