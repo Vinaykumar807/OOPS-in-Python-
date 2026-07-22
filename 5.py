@@ -1,51 +1,57 @@
-# # Simple Calculator :- 
+# Menu Driven Method :- 
+# A menu-driven program is a program that allows users to interact by choosing options from a menu.
+# These programs are commonly used in applications such as banking systems, shopping carts, or command-line utilities.
+# Menu-driven programs are typically implemented using loops and conditional statements (if-elif-else).
 
-# def add(a,b):
-#     return a+b
-# def sub(a,b):
-#     return a-b
-# def mul(a,b):
-#     return a*b
-# def div(a,b):
-#     return a/b
 
-# def display_menu():
-#     print("***Simple Calculator***")  
-#     print("1. Addition")
-#     print("2. Subtraction")
-#     print("3. Multiplication")
-#     print("4. Division")
-#     print("5. Exit!")
 
-# while (True) :
-#     display_menu()
+# Simple Calculator :- 
 
-#     choice = int(input("Enter your choice (1-5): "))
+def add(a,b):
+    return a+b
+def sub(a,b):
+    return a-b
+def mul(a,b):
+    return a*b
+def div(a,b):
+    return a/b
 
-#     if choice in {1,2,3,4}:
-#             a = int(input("Enter your first number : "))
-#             b = int(input("Enter your second number : "))
+def display_menu():
+    print("***Simple Calculator***")  
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Exit!")
 
-#     if choice == 1:
-#             print("Result :",add(a,b))
-#     elif choice == 2:
-#             print("Result :",sub(a,b))
-#     elif choice == 3:
-#             print("Result :",mul(a,b))
-#     elif choice == 4:
-#             print("Result :",div(a,b))
-#     elif choice == 5 :
-#             print("Exit!!")
-#             break
-#     else :
-#             print("Invaild chioce try agian!!!")
+while (True) :
+    display_menu()
+
+    choice = int(input("Enter your choice (1-5): "))
+
+    if choice in {1,2,3,4}:
+            a = int(input("Enter your first number : "))
+            b = int(input("Enter your second number : "))
+
+    if choice == 1:
+            print("Result :",add(a,b))
+    elif choice == 2:
+            print("Result :",sub(a,b))
+    elif choice == 3:
+            print("Result :",mul(a,b))
+    elif choice == 4:
+            print("Result :",div(a,b))
+    elif choice == 5 :
+            print("Exit!!")
+            break
+    else :
+            print("Invaild chioce try agian!!!")
 
 
 # Banking system 
 
-
-
 def display_menu():
+    print("***Banking System***")
     print("1.Check balance")
     print("2.Deposite Money")
     print("3.Withdraw Money")
