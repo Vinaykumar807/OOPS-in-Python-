@@ -86,12 +86,14 @@ while True :
 
 
 def store_menu():
+    print("***Grocery store menu***")
     print("1. Add items to there carts ")
     print("2.Remove items")
     print("3.View the total price")
     print("4.Exit")
 
 cart = []
+price = []
 
 while True :
     store_menu()
@@ -100,13 +102,20 @@ while True :
 
     if choice == 1 :
         item  = input("Enter your items to add : ")
-        price = input ("Enter your price : ")
+        item_price = float(input("Enter your price : "))
         cart.append(item)
+        price.append(item_price)
+        print("Items added successfully ")
+        
         
     elif choice == 2:
         item = (input("Enter your remove item : "))
         if item in cart :
             cart.remove(item )
+            price.remove(item_price)
+            print("Items is removed")
+        else :
+              print("Items not found ")
 
     elif choice == 3 :
         print("Items : ",cart)
@@ -124,6 +133,7 @@ while True :
 
 
 def contact_manage():
+        print("***Library Management System***")
         print("1. Add Contact ")
         print("2. View Contact  ")
         print("3. Search Contact  ")
