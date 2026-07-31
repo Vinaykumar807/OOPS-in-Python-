@@ -36,22 +36,35 @@ class Product:
         print("Sotocks :- ",self.stock)
         print("Disscount :- ",self.disscount)
 
-class Cart ():
-    def __init__(self,product,quntity):
-        self.product = product
-        self.quntity = quntity
 
-    def add_cart(self):
-        self.product + self.quntity
-        print("Cart has : ",self.product)
+class Cart():
+    def __init__(self):
+        self.products = []
+        self.quantity = []
+
+    def add_cart(self,products,quantity):
+        self.products.append(products)
+   
+        self.quantity.append(quantity)
+        
 
     def view_cart(self):
-        print("Cart has : ",self.product)
 
-    def remove_cart(self):
-        self.product - self.quntity
-        print("Cart removed : ",self.product)
+        if len(self.products) == 0:
+            print("Empty Cart.")
 
+        print("====CART====")
+        for i in range(len(self.products)):
+            product = self.products[i]
+            quantity = self.quantity[i]
+
+            
+
+            print("Products:",product.item_name)
+            print("Quantity:", quantity)
+        print("=========")
+        
+            
 class Customer :
     def __init__(self,name,number,id):
         self.name  = name 
@@ -64,20 +77,26 @@ class Customer :
 
 
 
-product1 = Product("Laptop",101,55000,10,10)
+product1 = Product()
 product2 = Product("Headphone",102,5000,10,15)
 product3 = Product("Phone",103,25000,15,8)
-cart1 = Cart("Laptop","10")
+
 customer1 = Customer("Vinay",636615,101)
 customer2 = Customer("Raju",997297,102)
 customer3 = Customer("Shrusti",807335,103)
+
+cart1 = Cart()
+
+
 product1.display_product()
-cart1.add_cart()
-cart1.remove_cart()
 customer1.display_customer()
+cart1.add_cart(product1)
+cart1.view_cart()
+
 print()
 product2.display_product()
 customer2.display_customer()
+
 print()
 product3.display_product()
 customer3.display_customer()
