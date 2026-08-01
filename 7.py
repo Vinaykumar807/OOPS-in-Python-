@@ -53,6 +53,7 @@ class Cart():
         if len(self.products) == 0:
             print("Empty Cart.")
 
+
         print("====CART====")
         for i in range(len(self.products)):
             product = self.products[i]
@@ -70,29 +71,77 @@ class Customer :
         self.name  = name 
         self.number = number
         self.id = id 
+
     def display_customer(self):
         print("Customer name : ",self.name)
         print("Customer ID : ",self.id)
         print("Customer Number: ",self.number)
 
+class Order() :
+    def __init__(self,customer,cart,order_id,status = "Pending"):
+        self.customer = customer
+        self.cart = cart    
+        self.order_id = order_id
+        self.status = status
+        
+    def place_order(self):
+
+       print("=====ORDER=======")
+         
+       print("Order ID : ",self.order_id)
+       print("Customer Name : ",self.customer.name)
+       print("Customer id : ",self.customer.id)
+       print("Status : ",self.status )
+
+    def calculate_total(self):
+        total = 0 
+
+        for i in range(len(self.cart.products)):
+            product = self.cart.products[i]
+            quantity = self.cart.quantity[i]
+
+            subtotal =  product.price * quantity 
+            total = total + subtotal
+
+        print("Total : ", total)
+
+        print("==============")
 
 
-product1 = Product()
+
+    def order_status(self):
+        print("====== ORDER STATUS ======")
+        print("Order ID :", self.order_id)
+        print("Customer :", self.customer.name)
+        print("Status   :", self.status)
+        print("==========================")
+
+    def change_status(self, new_status):
+        self.status = new_status
+        print("Status Updated Successfully!")
+        print("Status: ", self.status)
+
+
+product1 = Product("Laptop",101,55000,10,10)
 product2 = Product("Headphone",102,5000,10,15)
 product3 = Product("Phone",103,25000,15,8)
 
-customer1 = Customer("Vinay",636615,101)
-customer2 = Customer("Raju",997297,102)
-customer3 = Customer("Shrusti",807335,103)
+customer1 = Customer("Vinay",636615,1)
+customer2 = Customer("Raju",997297,2)
+customer3 = Customer("Shrusti",807335,3)
 
 cart1 = Cart()
+order1 = Order(customer1,cart1,1001,)
 
 
 product1.display_product()
 customer1.display_customer()
-cart1.add_cart(product1)
+cart1.add_cart(product1,2)
 cart1.view_cart()
-
+order1.place_order()
+order1.calculate_total()
+order1.change_status("Shipped")
+order1.order_status
 print()
 product2.display_product()
 customer2.display_customer()
