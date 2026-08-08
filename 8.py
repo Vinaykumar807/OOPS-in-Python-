@@ -4,8 +4,8 @@
 
 # Example os syntax error :- 
  
-if True                   # Missing colon
-    print("Hello")
+# if True                   # Missing colon
+#     print("Hello")
 
 # Example of Runtime Exception
 
