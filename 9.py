@@ -92,5 +92,4 @@ with open("hi.txt","w") as file6:
     file6.write("Hi users ! ")
 
 import os # OS = Opreating system 
-
-os.remove("hi.txt")
+os.remove("hi.txt")      # It will delete the existing file
