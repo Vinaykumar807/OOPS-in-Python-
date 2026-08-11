@@ -1,36 +1,13 @@
-# Errors and Exception Handling
-# Error :- An error is a problem in a program that stops the execution.
-# Two types of error :- 1. Syntax Errors 2. Exceptions
+Currency Converter 
 
-# Example os syntax error :- 
- 
-if True                   # Missing colon
-    print("Hello")
+from currency_converter import CurrencyConverter
+from datetime import date
+c = CurrencyConverter ()
+print(c.convert(1,"USD","INR"))
+print(c.convert(5,"USD","INR",date=date(2020,3,11))) # Using dates to check 
 
-# Example of Runtime Exception
+import qrcode
 
-a = 10
-b = 0
-print(a / b)       # Output :- ZeroDivisionError: division by zero
-
-
-# Exception Handling :- 
-# Exception Handling is a way to protect your program from crashing when an error occurs.
-
-# Basic Structure :- 
-
-
-try:                      # Code that may raise an exception (may be raise an error)
-    pass
-except Exception:    # What to do if error happens (if an error occur what should we do ! )
-    pass
-else :                    # Run if no error
-    pass
-finally :                 # Always run (cleanup, close file, etc.)
-    pass
-
-# 1.Example :- 
- 
-a = int(input("a : "))
-b = int(input("b : "))
-
+image = qrcode.make(" JAI SHREE RAM ")
+image.save("vs_qr.png")
+print("QR is genration success")
